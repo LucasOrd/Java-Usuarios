@@ -4,5 +4,11 @@ spring:
       database: mibase
       host: localhost
       port: 27017
+  cache:
+    type: redis
+  redis:
+    host: localhost
+    port: 6379
+    timeOfLife: 60000
 server:
   port: 8086

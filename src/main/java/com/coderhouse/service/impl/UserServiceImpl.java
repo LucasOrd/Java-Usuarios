@@ -1,7 +1,9 @@
 package com.coderhouse.service.impl;
 
 import com.coderhouse.builder.UserBuilder;
+import com.coderhouse.cache.CacheUser;
 import com.coderhouse.model.UserFactory;
+import com.coderhouse.model.database.document.UserDocument;
 import com.coderhouse.model.request.UserRequest;
 import com.coderhouse.model.response.UserResponse;
 import com.coderhouse.repository.UserRepository;
@@ -17,6 +19,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService{
     private final UserRepository repository;
     private final UserFactory userFactory = new UserFactory();
+    private final CacheUser<UserDocument> cache;
 
     @Override
     public UserResponse create(UserRequest request) {
